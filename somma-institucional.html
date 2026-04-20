@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOMMA Multi-Family Office | Gestão Patrimonial Exclusiva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --somma-blue:   #4D6571;
+      --somma-dark:   #373C3C;
+      --somma-slate:  #4B646F;
+      --somma-silver: #C3C4C6;
+      --somma-black:  #212121;
+      --somma-deep:   #2E3E44;
+      --somma-mist:   #6F8E9A;
+      --somma-frost:  #E9EBF0;
+      --somma-teal:   #007374;
+      --somma-gold:   #CC8B15;
+      --teal-dark:    #005657;
+      --gold-dark:    #AA6F11;
+      --gold-light:   #E2A849;
+      --font-main: 'Inter', 'Calibri', sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-main);
+      font-weight: 300;
+      color: var(--somma-blue);
+      background: var(--somma-frost);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--somma-dark);
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .site-header nav a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: 36px;
+      transition: color 0.2s;
+    }
+    .site-header nav a:hover { color: var(--gold-light); }
+
+    .header-cta {
+      background: var(--somma-gold);
+      color: white !important;
+      font-weight: 700 !important;
+      padding: 9px 22px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s !important;
+    }
+    .header-cta:hover { background: var(--gold-dark) !important; }
+
+    /* ── LOGO SVG ── */
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-mark svg { width: 36px; height: 36px; }
+    .logo-text { color: white; }
+    .logo-text .name {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      line-height: 1;
+    }
+    .logo-text .sub {
+      display: block;
+      font-size: 0.52rem;
+      font-weight: 200;
+      letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--somma-black) 0%, var(--somma-deep) 55%, var(--somma-dark) 100%);
+      color: white;
+      padding: 110px 60px 90px;
+      position: relative;
+      overflow: hidden;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg-lines {
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.025) 40px,
+        rgba(255,255,255,0.025) 41px
+      );
+      pointer-events: none;
+    }
+
+    .hero-wave {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      pointer-events: none;
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.06;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 200;
+      font-style: italic;
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 200;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--somma-gold);
+      color: white;
+      font-family: var(--font-main);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-dark); }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.25);
+      font-family: var(--font-main);
+      font-weight: 300;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.08);
+      color: white;
+    }
+
+    /* ── NÚMEROS ── */
+    .stats-bar {
+      background: var(--somma-deep);
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat-item {
+      padding: 32px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      flex: 1;
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-value {
+      display: block;
+      font-size: 2rem;
+      font-weight: 200;
+      color: white;
+      letter-spacing: 0.04em;
+    }
+    .stat-value em {
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 300;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── SEÇÃO SOBRE ── */
+    .section-sobre {
+      background: var(--somma-frost);
+      padding: 96px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-label {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--somma-gold);
+      margin-bottom: 16px;
+    }
+
+    .section-h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 200;
+      color: var(--somma-dark);
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .divider-gold {
+      width: 44px;
+      height: 2px;
+      background: var(--somma-gold);
+      margin: 20px 0 32px;
+    }
+
+    .sobre-text {
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: var(--somma-slate);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .sobre-quote {
+      border-left: 2px solid var(--somma-gold);
+      padding: 16px 24px;
+      background: white;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: 28px;
+    }
+
+    .sobre-quote p {
+      font-style: italic;
+      font-weight: 200;
+      font-size: 0.95rem;
+      color: var(--somma-blue);
+      line-height: 1.7;
+    }
+    .sobre-quote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--somma-silver);
+      margin-top: 10px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding-bottom: 28px;
+      position: relative;
+    }
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 44px;
+      bottom: 0;
+      width: 1px;
+      background: var(--somma-silver);
+    }
+
+    .timeline-dot {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 50%;
+      background: var(--somma-frost);
+      border: 1.5px solid var(--somma-silver);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--somma-blue);
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-dot.active {
+      background: var(--somma-gold);
+      border-color: var(--somma-gold);
+      color: white;
+    }
+
+    .timeline-text strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--somma-dark);
+      letter-spacing: 0.06em;
+      margin-top: 12px;
+    }
+    .timeline-text span {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--somma-mist);
+    }
+
+    /* ── SERVIÇOS ── */
+    .section-servicos {
+      background: var(--somma-dark);
+      padding: 96px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-servicos .section-label {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .section-servicos .section-h2 {
+      color: white;
+    }
+
+    .section-servicos .divider-gold {
+      margin-bottom: 56px;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .servico-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .servico-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(204,139,21,0.35);
+    }
+
+    .servico-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 20px;
+    }
+
+    .servico-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 14px;
+    }
+
+    .servico-list {
+      list-style: none;
+      padding: 0;
+    }
+    .servico-list li {
+      font-size: 0.83rem;
+      font-weight: 200;
+      color: rgba(255,255,255,0.55);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .servico-list li::before {
+      content: '';
+      width: 5px;
+      height: 1px;
+      background: var(--somma-gold);
+      display: block;
+      flex-shrink: 0;
+    }
+    .servico-list li:last-child { border-bottom: none; }
+
+    .bg-deco {
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.035;
+      pointer-events: none;
+    }
+
+    /* ── DIFERENCIAIS ── */
+    .section-dif {
+      background: var(--somma-frost);
+      padding: 96px 60px;
+    }
+
+    .dif-intro {
+      max-width: 600px;
+      margin-bottom: 64px;
+    }
+
+    .dif-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .dif-card {
+      background: white;
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--somma-gold);
+      padding: 32px 28px;
+      box-shadow: 0 2px 20px rgba(77,101,113,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .dif-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(77,101,113,0.12);
+    }
+
+    .dif-num {
+      font-size: 2.4rem;
+      font-weight: 200;
+      color: var(--somma-silver);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .dif-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--somma-dark);
+      margin-bottom: 12px;
+    }
+
+    .dif-card p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--somma-slate);
+      line-height: 1.75;
+    }
+
+    /* ── CERTIFICAÇÕES ── */
+    .section-cert {
+      background: white;
+      padding: 52px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border-top: 1px solid var(--somma-frost);
+      border-bottom: 1px solid var(--somma-frost);
+    }
+
+    .cert-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--somma-silver);
+      white-space: nowrap;
+    }
+
+    .cert-items {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cert-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cert-badge .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--somma-gold);
+      flex-shrink: 0;
+    }
+    .cert-badge span {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--somma-blue);
+      letter-spacing: 0.04em;
+    }
+    .cert-badge strong {
+      font-weight: 700;
+    }
+
+    .midia-text {
+      font-size: 0.8rem;
+      font-weight: 200;
+      color: var(--somma-mist);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .midia-text strong {
+      color: var(--somma-blue);
+      font-weight: 700;
+    }
+
+    /* ── CTA SECTION ── */
+    .section-cta {
+      background: linear-gradient(135deg, var(--somma-deep) 0%, var(--somma-dark) 100%);
+      padding: 96px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-cta .cta-label {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+
+    .section-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 200;
+      font-style: italic;
+      color: white;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .section-cta p {
+      font-size: 1rem;
+      font-weight: 200;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.75;
+    }
+
+    .cta-divider {
+      width: 44px;
+      height: 2px;
+      background: var(--somma-gold);
+      margin: 16px auto 32px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--somma-black);
+      color: rgba(255,255,255,0.45);
+      padding: 72px 60px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 56px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-brand .logo-mark {
+      margin-bottom: 20px;
+      display: inline-flex;
+    }
+
+    .footer-brand p {
+      font-size: 0.83rem;
+      font-weight: 200;
+      line-height: 1.75;
+      max-width: 280px;
+      margin-bottom: 24px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .social-link {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      border-color: var(--somma-gold);
+      color: var(--gold-light);
+    }
+
+    .footer-col h4 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      font-size: 0.82rem;
+      font-weight: 200;
+      padding: 6px 0;
+    }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+
+    .footer-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-block {
+      font-size: 0.79rem;
+      font-weight: 200;
+      line-height: 1.65;
+    }
+    .contact-block strong {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--somma-mist);
+      margin-bottom: 4px;
+    }
+    .contact-block a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+    }
+    .contact-block a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.73rem;
+      font-weight: 200;
+      color: rgba(255,255,255,0.2);
+    }
+    .footer-bottom span {
+      color: rgba(255,255,255,0.12);
+      font-size: 0.7rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .site-header { padding: 18px 28px; }
+      .site-header nav { display: none; }
+      .hero { padding: 80px 28px 70px; min-height: 70vh; }
+      .hero-symbol { display: none; }
+      .stats-bar { flex-wrap: wrap; padding: 0 28px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .section-sobre { grid-template-columns: 1fr; gap: 48px; padding: 64px 28px; }
+      .section-servicos,
+      .section-dif,
+      .section-cta { padding: 64px 28px; }
+      .dif-grid { grid-template-columns: 1fr; }
+      .section-cert { flex-direction: column; align-items: flex-start; padding: 40px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .site-footer { padding: 56px 28px 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="site-header">
+    <a class="logo-mark" href="#">
+      <svg id="Camada_1" style="height:40px;width:auto;" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.54 128.68">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <path class="cls-1" d="M98.42,85.94c.04.11.08.21.12.32.04-.11.08-.22.13-.32s.09-.2.15-.31l2.9-5.27c.05-.09.11-.15.16-.17.06-.02.14-.03.24-.03h.86v8.57h-1.02v-6.3c0-.08,0-.17,0-.27,0-.1,0-.19.02-.29l-2.94,5.36c-.1.18-.24.27-.42.27h-.17c-.18,0-.32-.09-.42-.27l-3-5.38c.01.1.02.21.03.31,0,.1,0,.19,0,.28v6.3h-1.02v-8.57h.86c.1,0,.18.01.24.03.06.02.11.08.16.17l2.96,5.28c.06.1.1.2.15.3Z"/>
+      <path class="cls-1" d="M109.45,87.82c.35,0,.67-.06.95-.18.28-.12.52-.29.71-.5.19-.22.34-.47.44-.77.1-.3.15-.63.15-.99v-5.21h1.15v5.21c0,.49-.08.95-.24,1.38-.16.42-.38.79-.68,1.1-.29.31-.65.55-1.07.73-.42.18-.9.26-1.42.26s-1-.09-1.42-.26c-.42-.18-.78-.42-1.08-.73-.3-.31-.52-.68-.68-1.1-.16-.42-.24-.88-.24-1.38v-5.21h1.15v5.2c0,.36.05.69.15.99.1.3.25.56.44.77.19.22.43.38.71.5.28.12.6.18.95.18Z"/>
+      <path class="cls-1" d="M117.06,87.76h3.71v.97h-4.87v-8.57h1.16v7.6Z"/>
+      <path class="cls-1" d="M127.91,80.17v.98h-2.77v7.6h-1.16v-7.6h-2.78v-.98h6.71Z"/>
+      <path class="cls-1" d="M131.56,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-1" d="M134.47,84.7h2.95v.9h-2.95v-.9Z"/>
+      <path class="cls-1" d="M145.39,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-1" d="M154.2,88.74h-.9c-.1,0-.19-.03-.25-.08-.06-.05-.11-.12-.14-.2l-.8-2.07h-3.85l-.8,2.07c-.03.07-.08.14-.14.19s-.15.08-.25.08h-.9l3.43-8.57h1.18l3.43,8.57ZM148.58,85.56h3.2l-1.35-3.49c-.09-.22-.17-.48-.26-.81-.04.16-.09.31-.13.45-.04.14-.08.26-.12.36l-1.35,3.48Z"/>
+      <path class="cls-1" d="M160.7,85.94c.04.11.08.21.12.32.04-.11.08-.22.13-.32.04-.1.09-.2.15-.31l2.9-5.27c.05-.09.11-.15.16-.17.06-.02.14-.03.24-.03h.86v8.57h-1.02v-6.3c0-.08,0-.17,0-.27,0-.1,0-.19.02-.29l-2.94,5.36c-.1.18-.24.27-.42.27h-.17c-.18,0-.32-.09-.42-.27l-3-5.38c.01.1.02.21.03.31,0,.1,0,.19,0,.28v6.3h-1.02v-8.57h.85c.1,0,.18.01.24.03.06.02.11.08.16.17l2.96,5.28c.06.1.11.2.15.3Z"/>
+      <path class="cls-1" d="M169.77,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-1" d="M174.28,87.76h3.71v.97h-4.87v-8.57h1.16v7.6Z"/>
+      <path class="cls-1" d="M182.35,85.33v3.41h-1.15v-3.41l-3.14-5.16h1.02c.1,0,.19.03.25.08s.11.12.16.19l1.96,3.33c.08.14.15.27.2.39.05.12.1.24.15.36.04-.12.09-.25.14-.37s.12-.25.2-.39l1.96-3.33c.04-.06.08-.12.15-.18.06-.06.14-.09.24-.09h1.03l-3.15,5.16Z"/>
+      <path class="cls-1" d="M198.95,84.46c0,.64-.1,1.23-.31,1.77s-.49,1-.86,1.38-.82.69-1.34.9-1.1.32-1.73.32-1.2-.11-1.72-.32c-.52-.21-.96-.51-1.33-.9s-.66-.85-.86-1.38-.31-1.13-.31-1.77.1-1.23.31-1.77.49-1,.86-1.39c.37-.39.82-.69,1.33-.91.52-.22,1.09-.32,1.72-.32s1.21.11,1.73.32c.52.22.97.52,1.34.91.37.39.66.85.86,1.39s.31,1.13.31,1.77ZM197.76,84.46c0-.53-.07-1-.22-1.42-.14-.42-.35-.77-.61-1.06-.26-.29-.58-.51-.96-.67-.38-.16-.79-.23-1.26-.23s-.88.08-1.25.23c-.37.15-.69.38-.96.67s-.47.64-.61,1.06-.22.89-.22,1.42.07,1,.22,1.41.35.77.61,1.06.59.51.96.66c.38.15.79.23,1.25.23s.88-.08,1.26-.23c.37-.15.69-.38.96-.66.26-.29.47-.64.61-1.06.14-.42.22-.89.22-1.41Z"/>
+      <path class="cls-1" d="M206.87,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-1" d="M214.69,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-1" d="M218.61,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-1" d="M228,86.97c.06,0,.12.03.17.08l.46.5c-.35.41-.78.72-1.28.95-.5.23-1.1.34-1.81.34-.62,0-1.18-.11-1.68-.32-.5-.21-.93-.51-1.29-.9s-.63-.85-.83-1.38c-.2-.54-.29-1.13-.29-1.78s.1-1.24.31-1.78c.21-.54.5-1,.88-1.39.38-.39.83-.69,1.36-.9.53-.21,1.11-.32,1.75-.32s1.17.1,1.63.29.86.46,1.22.8l-.38.53s-.06.07-.1.1-.09.04-.16.04c-.05,0-.11-.02-.16-.06-.06-.04-.13-.08-.21-.14-.08-.06-.17-.12-.28-.18-.11-.06-.23-.12-.38-.18-.15-.06-.32-.1-.51-.14-.2-.04-.42-.06-.68-.06-.46,0-.88.08-1.26.24s-.71.38-.98.67c-.27.29-.49.65-.64,1.06s-.23.89-.23,1.41.08,1.01.23,1.43.36.77.63,1.06c.27.29.58.51.94.66.36.15.75.23,1.17.23.26,0,.48-.01.69-.04.2-.03.39-.08.57-.14.17-.06.34-.14.48-.24.15-.1.3-.21.45-.35.07-.06.13-.09.2-.09Z"/>
+      <path class="cls-1" d="M236.48,80.17v.95h-4.12v2.85h3.33v.91h-3.33v2.92h4.12v.95h-5.28v-8.57h5.28Z"/>
+    </g>
+    <g>
+      <path class="cls-1" d="M219.7,47.04l-11.49,25.84h2.57c1.77,0,3.3-1.08,3.93-2.62l1.01-2.26h5.73c2.45-.18,4.43-2.12,4.68-4.55h-8.39l4.61-10.38,7.62,17.15h0c.63,1.56,2.16,2.66,3.93,2.66h2.59l-11.49-25.84h-5.3Z"/>
+      <path class="cls-1" d="M130.38,46.55c-7.43,0-13.45,6.02-13.45,13.45s6.02,13.45,13.45,13.45,13.45-6.02,13.45-13.45-6.02-13.45-13.45-13.45ZM130.41,68.72c-4.73,0-8.58-3.83-8.58-8.57s3.84-8.57,8.58-8.57,8.57,3.84,8.57,8.57-3.84,8.57-8.57,8.57Z"/>
+      <path class="cls-1" d="M99.87,68c-.79-.35-1.67-.56-2.6-.56-1.16,0-2.25.32-3.18.86.03.06.06.11.09.16,0,0,0,0,0,0,.01.02.03.05.04.07.63,1.15,1.43,2.02,2.31,2.69.04.03.07.05.11.08.12.09.25.18.37.26.1.07.2.14.31.2,0,0,.01,0,.02.01.23.14.47.27.72.39.02,0,.04.02.06.03.18.09.37.17.56.25.1.04.2.08.3.12.07.03.13.05.19.08,2.14.78,4.09.77,4.48.79h0c.33.01.66.02,1,.02,5.66-.03,10.67-2.43,10.67-8.1,0-6.06-4.94-7.43-10.23-8.09-3.05-.36-5.66-.99-5.66-3.2,0-1.89,1.7-3.37,5.26-3.37,1.15,0,2.53.36,3.21.6,1.04.36,1.38.4,2.04.49,2.31.33,4.18-.95,4.18-.95-2.06-3.33-5.88-4.32-9.58-4.32-4.68.04-9.83,2.18-9.83,7.4,0,5.7,4.79,7.08,9.98,7.69,3.37.36,5.87,1.35,5.87,3.74,0,2.76-2.83,3.81-5.84,3.81-1.34,0-2.62-.21-3.74-.68"/>
+      <path class="cls-1" d="M169.28,47.06h0c-.48,0-.91.24-1.17.6h0l-7.65,10.51-7.63-10.49c-.26-.37-.69-.62-1.18-.62h-4.87v25.83h0c2.68,0,4.85-2.17,4.87-4.85h0v-13.93l8.69,11.85,8.92-11.8v13.87c0,2.69,2.18,4.86,4.87,4.86h0v-25.83h-4.84Z"/>
+      <path class="cls-1" d="M201.11,47.06h0c-.48,0-.9.24-1.17.6h0l-7.64,10.51-7.63-10.49c-.26-.37-.69-.62-1.18-.62h-4.87v25.83h0c2.68,0,4.85-2.17,4.86-4.85h0v-13.93l8.68,11.85,8.92-11.8v13.87c0,2.69,2.18,4.86,4.87,4.86h0v-25.83h-4.84Z"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-1" d="M51.9,56.35h0s-5.4,18.83-5.4,18.83l-3.91,13.67c6.46.06,12.44-4.17,14.31-10.68h0s5.4-18.83,5.4-18.83l3.92-13.66h-.15c-6.41,0-12.31,4.21-14.17,10.68"/>
+    <path class="cls-1" d="M67.78,45.85h0s-5.39,18.84-5.39,18.84l-3.92,13.66c6.47.06,12.45-4.16,14.31-10.68h0s5.41-18.76,5.41-18.76l3.92-13.66c-.1,0-.2,0-.3,0-6.36,0-12.19,4.2-14.03,10.61"/>
+    <path class="cls-1" d="M29.61,78.34h14.35l4.04-14.18s-6.81,9.38-18.39,14.18"/>
+    <path class="cls-1" d="M80.74,45.62l-4.04,14.19s6.81-9.38,18.39-14.19h-14.35Z"/>
+  </g>
+</svg>
+    </a>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#contato" class="header-cta">Falar com um gestor</a>
+    </nav>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg-lines"></div>
+
+    <!-- Símbolo decorativo -->
+    <div class="hero-symbol">
+      <svg width="520" height="520" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="white" stroke-width="0.6" fill="none"/>
+        <path d="M8 20L24 8L40 20V28L24 40L8 28V20Z" fill="none" stroke="white" stroke-width="0.5"/>
+        <line x1="14" y1="16" x2="24" y2="24" stroke="white" stroke-width="1"/>
+        <line x1="34" y1="16" x2="24" y2="24" stroke="white" stroke-width="1"/>
+        <line x1="24" y1="24" x2="24" y2="38" stroke="white" stroke-width="0.8"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">SOMMA Multi-Family Office · Desde 2005</p>
+      <h1>
+        Confiar em quem transforma<br>
+        oportunidade em <span>decisão segura.</span>
+      </h1>
+      <p class="hero-sub">
+        Gestão patrimonial exclusiva para famílias e empresários com alto volume de ativos — integrando investimentos, planejamento sucessório, governança familiar e tecnologia proprietária em uma visão única do seu patrimônio.
+      </p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Agendar diagnóstico patrimonial</a>
+        <a href="#servicos" class="btn-ghost">Conhecer os serviços</a>
+      </div>
+    </div>
+
+    <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" style="height:80px;">
+      <path d="M0,50 C400,0 1040,80 1440,40 L1440,80 L0,80 Z" fill="rgba(255,255,255,0.03)"/>
+      <path d="M0,65 C360,20 1080,80 1440,55 L1440,80 L0,80 Z" fill="rgba(204,139,21,0.06)"/>
+    </svg>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       STATS BAR
+  ═══════════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-value">R$<em> 18</em>Bi</span>
+      <span class="stat-label">em ativos sob gestão</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value"><em>+20</em> anos</span>
+      <span class="stat-label">de histórico consolidado</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value"><em>80</em>+</span>
+      <span class="stat-label">profissionais especializados</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value"><em>4</em> escritórios</span>
+      <span class="stat-label">no sul e sudeste do Brasil</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value"><em>MQ2</em>.br</span>
+      <span class="stat-label">rating Moody's Local Brasil</span>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       SOBRE
+  ═══════════════════════════════════════════ -->
+  <section class="section-sobre" id="sobre">
+    <div>
+      <p class="sobre-label">Quem somos</p>
+      <h2 class="section-h2">Um novo patamar de exclusividade para sua gestão patrimonial</h2>
+      <div class="divider-gold"></div>
+      <p class="sobre-text">
+        Somos a SOMMA Investimentos, um núcleo de negócios 360º idealizado por pessoas e direcionado a pessoas. Atuamos em um ecossistema diverso — de fundos de investimentos e planejamento patrimonial à gestão de imóveis — prestando suporte qualificado ao seu cenário financeiro.
+      </p>
+      <p class="sobre-text">
+        Na SOMMA, sabemos que a riqueza vai além dos números. É o tempo compartilhado, as memórias preciosas e a tranquilidade de saber que o amanhã está seguro.
+      </p>
+      <div class="sobre-quote">
+        <p>"Os seus recursos são mantidos com geração de valor e analisados por especialistas no mercado, de acordo com suas necessidades e intenções. O objetivo em comum que conecta tudo o que oferecemos é o atendimento próximo, confiável e seguro."</p>
+        <cite>Wilson Souza — CEO, SOMMA Investimentos</cite>
+      </div>
+    </div>
+    <div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">2003</div>
+          <div class="timeline-text">
+            <strong>Fundação</strong>
+            <span>Início das operações como gestora de recursos</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2005</div>
+          <div class="timeline-text">
+            <strong>Multi-Family Office</strong>
+            <span>Criação da estrutura dedicada a famílias de alto patrimônio</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2008</div>
+          <div class="timeline-text">
+            <strong>Fundos Abertos</strong>
+            <span>Expansão da plataforma de investimentos</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2019</div>
+          <div class="timeline-text">
+            <strong>Lidderar</strong>
+            <span>Gestão imobiliária integrada ao ecossistema</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot active">2025</div>
+          <div class="timeline-text">
+            <strong>Escritório em Jaraguá do Sul</strong>
+            <span>Expansão dedicada exclusivamente ao MFO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       SERVIÇOS
+  ═══════════════════════════════════════════ -->
+  <section class="section-servicos" id="servicos">
+
+    <div class="bg-deco" aria-hidden="true">
+      <svg width="600" height="600" viewBox="0 0 48 48" fill="none">
+        <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="white" stroke-width="0.6"/>
+        <line x1="14" y1="16" x2="24" y2="24" stroke="white" stroke-width="0.8"/>
+        <line x1="34" y1="16" x2="24" y2="24" stroke="white" stroke-width="0.8"/>
+        <line x1="24" y1="24" x2="24" y2="38" stroke="white" stroke-width="0.6"/>
+      </svg>
+    </div>
+
+    <p class="section-label">O que entregamos</p>
+    <h2 class="section-h2">Serviços estruturados para preservar e fazer crescer o seu patrimônio</h2>
+    <div class="divider-gold"></div>
+
+    <div class="servicos-grid">
+
+      <div class="servico-card">
+        <svg class="servico-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="6" y="6" width="32" height="32" rx="6" stroke="#CC8B15" stroke-width="1.2"/>
+          <polyline points="12,28 18,20 24,24 32,14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <circle cx="32" cy="14" r="2.5" fill="#CC8B15"/>
+        </svg>
+        <h3>Investimentos</h3>
+        <ul class="servico-list">
+          <li>Investimentos Offshore</li>
+          <li>Carteira administrada e fundos exclusivos</li>
+          <li>Consolidação global dos investimentos</li>
+          <li>Acompanhamento tributário</li>
+        </ul>
+      </div>
+
+      <div class="servico-card">
+        <svg class="servico-icon" viewBox="0 0 44 44" fill="none">
+          <circle cx="22" cy="22" r="16" stroke="#CC8B15" stroke-width="1.2"/>
+          <path d="M22 10 L22 22 L30 26" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <circle cx="22" cy="22" r="2" fill="#CC8B15"/>
+        </svg>
+        <h3>Planejamento Patrimonial</h3>
+        <ul class="servico-list">
+          <li>Estruturas Offshore</li>
+          <li>Planejamento sucessório e tributário</li>
+          <li>Governança familiar</li>
+          <li>Acompanhamento contínuo</li>
+        </ul>
+      </div>
+
+      <div class="servico-card">
+        <svg class="servico-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="8" y="14" width="28" height="20" rx="4" stroke="#CC8B15" stroke-width="1.2"/>
+          <path d="M15 14V11a7 7 0 0114 0v3" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="22" cy="24" r="3" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+        <h3>Gestão de Contas</h3>
+        <ul class="servico-list">
+          <li>Controle de liquidez e fluxo de caixa</li>
+          <li>Tesouraria familiar e holding</li>
+          <li>Seguros</li>
+          <li>Suporte contábil</li>
+        </ul>
+      </div>
+
+      <div class="servico-card">
+        <svg class="servico-icon" viewBox="0 0 44 44" fill="none">
+          <path d="M10 34L22 10L34 34H10Z" stroke="#CC8B15" stroke-width="1.2" fill="none"/>
+          <line x1="22" y1="18" x2="22" y2="28" stroke="white" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+          <circle cx="22" cy="31" r="1.5" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+        <h3>Gestão de Imóveis</h3>
+        <ul class="servico-list">
+          <li>Gestão da carteira imobiliária</li>
+          <li>Consolidação global dos imóveis</li>
+          <li>Precificação e avaliação</li>
+          <li>Novos negócios</li>
+        </ul>
+      </div>
+
+      <div class="servico-card">
+        <svg class="servico-icon" viewBox="0 0 44 44" fill="none">
+          <rect x="6" y="10" width="32" height="24" rx="5" stroke="#CC8B15" stroke-width="1.2"/>
+          <circle cx="22" cy="22" r="5" stroke="white" stroke-width="1.2" opacity="0.7"/>
+          <line x1="22" y1="10" x2="22" y2="16" stroke="white" stroke-width="1.2" opacity="0.4"/>
+          <line x1="22" y1="28" x2="22" y2="34" stroke="white" stroke-width="1.2" opacity="0.4"/>
+          <line x1="6" y1="22" x2="16" y2="22" stroke="white" stroke-width="1.2" opacity="0.4"/>
+          <line x1="28" y1="22" x2="38" y2="22" stroke="white" stroke-width="1.2" opacity="0.4"/>
+        </svg>
+        <h3>Tecnologia Proprietária</h3>
+        <ul class="servico-list">
+          <li>Software para Visão do Patrimônio</li>
+          <li>Criptografia de Senhas</li>
+          <li>IA para Operações Bancárias</li>
+          <li>Consolidação digital integrada</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       DIFERENCIAIS
+  ═══════════════════════════════════════════ -->
+  <section class="section-dif" id="diferenciais">
+    <div class="dif-intro">
+      <p class="sobre-label">Por que a SOMMA</p>
+      <h2 class="section-h2">Diferenciais que estruturam decisões de longo prazo</h2>
+      <div class="divider-gold"></div>
+      <p class="sobre-text" style="margin-bottom:0;">
+        Pesquisas recentes mostram que 79% das famílias buscam um MFO para profissionalizar a gestão do patrimônio — e 72% têm como motivação principal o planejamento sucessório.
+      </p>
+    </div>
+
+    <div class="dif-grid">
+      <div class="dif-card">
+        <div class="dif-num">01</div>
+        <h3>Isenção de conflito</h3>
+        <p>Diferentemente de bancos, a SOMMA não recebe comissões por produtos vendidos. Nossos interesses são os mesmos que os seus.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-num">02</div>
+        <h3>Visão holística</h3>
+        <p>Investimentos, imóveis, holding, sucessão e liquidez são analisados de forma integrada — não em silos separados.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-num">03</div>
+        <h3>Atendimento multidisciplinar</h3>
+        <p>Equipe própria de economistas, gestores, advogados tributaristas e especialistas imobiliários sob o mesmo teto.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-num">04</div>
+        <h3>Planejamento multigeracional</h3>
+        <p>Estruturas que preservam e transmitem patrimônio com governança familiar definida para as próximas gerações.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-num">05</div>
+        <h3>Privacidade e segurança</h3>
+        <p>Tecnologia proprietária com criptografia de senhas e estrutura de dados que não trafega por instituições financeiras terceiras.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-num">06</div>
+        <h3>Acesso exclusivo</h3>
+        <p>Projetos de investimentos acessíveis apenas por meio de plataformas profissionais — fora do alcance do varejo bancário.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       CERTIFICAÇÕES
+  ═══════════════════════════════════════════ -->
+  <div class="section-cert">
+    <span class="cert-label">Certificações &amp; Reconhecimentos</span>
+    <div class="cert-items">
+      <div class="cert-badge">
+        <span class="badge-dot"></span>
+        <span><strong>Moody's</strong> MQ2.br</span>
+      </div>
+      <div class="cert-badge">
+        <span class="badge-dot"></span>
+        <span><strong>Austin</strong> QG2-</span>
+      </div>
+      <div class="cert-badge">
+        <span class="badge-dot"></span>
+        <span><strong>ANBIMA</strong> Gestão de Patrimônio</span>
+      </div>
+      <div class="cert-badge">
+        <span class="badge-dot"></span>
+        <span><strong>ANBIMA</strong> Gestão de Recursos</span>
+      </div>
+      <div class="cert-badge">
+        <span class="badge-dot"></span>
+        <span><strong>Como Investir</strong></span>
+      </div>
+    </div>
+    <p class="midia-text">Menções em <strong>Valor Econômico</strong><br>e <strong>Neofeed</strong></p>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════
+       CTA
+  ═══════════════════════════════════════════ -->
+  <section class="section-cta" id="contato">
+    <p class="cta-label">Próximo passo</p>
+    <h2>Estruture o futuro<br>do seu patrimônio.</h2>
+    <div class="cta-divider"></div>
+    <p>Para famílias e empresários a partir de R$ 10 milhões em patrimônio. Recomendado a partir de R$ 20 milhões para uma abordagem 360º.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5548999112229" class="btn-primary">Conversar no WhatsApp</a>
+      <a href="mailto:contato@sommainvestimentos.com.br" class="btn-ghost">Enviar e-mail</a>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a class="logo-mark" href="#">
+<svg id="Camada_1" style="height:28px;width:auto;opacity:0.7;" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297.54 128.68">
+  <defs>
+    <style>
+      .cls-footer {
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <path class="cls-footer" d="M98.42,85.94c.04.11.08.21.12.32.04-.11.08-.22.13-.32s.09-.2.15-.31l2.9-5.27c.05-.09.11-.15.16-.17.06-.02.14-.03.24-.03h.86v8.57h-1.02v-6.3c0-.08,0-.17,0-.27,0-.1,0-.19.02-.29l-2.94,5.36c-.1.18-.24.27-.42.27h-.17c-.18,0-.32-.09-.42-.27l-3-5.38c.01.1.02.21.03.31,0,.1,0,.19,0,.28v6.3h-1.02v-8.57h.86c.1,0,.18.01.24.03.06.02.11.08.16.17l2.96,5.28c.06.1.1.2.15.3Z"/>
+      <path class="cls-footer" d="M109.45,87.82c.35,0,.67-.06.95-.18.28-.12.52-.29.71-.5.19-.22.34-.47.44-.77.1-.3.15-.63.15-.99v-5.21h1.15v5.21c0,.49-.08.95-.24,1.38-.16.42-.38.79-.68,1.1-.29.31-.65.55-1.07.73-.42.18-.9.26-1.42.26s-1-.09-1.42-.26c-.42-.18-.78-.42-1.08-.73-.3-.31-.52-.68-.68-1.1-.16-.42-.24-.88-.24-1.38v-5.21h1.15v5.2c0,.36.05.69.15.99.1.3.25.56.44.77.19.22.43.38.71.5.28.12.6.18.95.18Z"/>
+      <path class="cls-footer" d="M117.06,87.76h3.71v.97h-4.87v-8.57h1.16v7.6Z"/>
+      <path class="cls-footer" d="M127.91,80.17v.98h-2.77v7.6h-1.16v-7.6h-2.78v-.98h6.71Z"/>
+      <path class="cls-footer" d="M131.56,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-footer" d="M134.47,84.7h2.95v.9h-2.95v-.9Z"/>
+      <path class="cls-footer" d="M145.39,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-footer" d="M154.2,88.74h-.9c-.1,0-.19-.03-.25-.08-.06-.05-.11-.12-.14-.2l-.8-2.07h-3.85l-.8,2.07c-.03.07-.08.14-.14.19s-.15.08-.25.08h-.9l3.43-8.57h1.18l3.43,8.57ZM148.58,85.56h3.2l-1.35-3.49c-.09-.22-.17-.48-.26-.81-.04.16-.09.31-.13.45-.04.14-.08.26-.12.36l-1.35,3.48Z"/>
+      <path class="cls-footer" d="M160.7,85.94c.04.11.08.21.12.32.04-.11.08-.22.13-.32.04-.1.09-.2.15-.31l2.9-5.27c.05-.09.11-.15.16-.17.06-.02.14-.03.24-.03h.86v8.57h-1.02v-6.3c0-.08,0-.17,0-.27,0-.1,0-.19.02-.29l-2.94,5.36c-.1.18-.24.27-.42.27h-.17c-.18,0-.32-.09-.42-.27l-3-5.38c.01.1.02.21.03.31,0,.1,0,.19,0,.28v6.3h-1.02v-8.57h.85c.1,0,.18.01.24.03.06.02.11.08.16.17l2.96,5.28c.06.1.11.2.15.3Z"/>
+      <path class="cls-footer" d="M169.77,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-footer" d="M174.28,87.76h3.71v.97h-4.87v-8.57h1.16v7.6Z"/>
+      <path class="cls-footer" d="M182.35,85.33v3.41h-1.15v-3.41l-3.14-5.16h1.02c.1,0,.19.03.25.08s.11.12.16.19l1.96,3.33c.08.14.15.27.2.39.05.12.1.24.15.36.04-.12.09-.25.14-.37s.12-.25.2-.39l1.96-3.33c.04-.06.08-.12.15-.18.06-.06.14-.09.24-.09h1.03l-3.15,5.16Z"/>
+      <path class="cls-footer" d="M198.95,84.46c0,.64-.1,1.23-.31,1.77s-.49,1-.86,1.38-.82.69-1.34.9-1.1.32-1.73.32-1.2-.11-1.72-.32c-.52-.21-.96-.51-1.33-.9s-.66-.85-.86-1.38-.31-1.13-.31-1.77.1-1.23.31-1.77.49-1,.86-1.39c.37-.39.82-.69,1.33-.91.52-.22,1.09-.32,1.72-.32s1.21.11,1.73.32c.52.22.97.52,1.34.91.37.39.66.85.86,1.39s.31,1.13.31,1.77ZM197.76,84.46c0-.53-.07-1-.22-1.42-.14-.42-.35-.77-.61-1.06-.26-.29-.58-.51-.96-.67-.38-.16-.79-.23-1.26-.23s-.88.08-1.25.23c-.37.15-.69.38-.96.67s-.47.64-.61,1.06-.22.89-.22,1.42.07,1,.22,1.41.35.77.61,1.06.59.51.96.66c.38.15.79.23,1.25.23s.88-.08,1.26-.23c.37-.15.69-.38.96-.66.26-.29.47-.64.61-1.06.14-.42.22-.89.22-1.41Z"/>
+      <path class="cls-footer" d="M206.87,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-footer" d="M214.69,80.17v.95h-4.12v3h3.52v.95h-3.52v3.68h-1.17v-8.57h5.28Z"/>
+      <path class="cls-footer" d="M218.61,88.74h-1.16v-8.57h1.16v8.57Z"/>
+      <path class="cls-footer" d="M228,86.97c.06,0,.12.03.17.08l.46.5c-.35.41-.78.72-1.28.95-.5.23-1.1.34-1.81.34-.62,0-1.18-.11-1.68-.32-.5-.21-.93-.51-1.29-.9s-.63-.85-.83-1.38c-.2-.54-.29-1.13-.29-1.78s.1-1.24.31-1.78c.21-.54.5-1,.88-1.39.38-.39.83-.69,1.36-.9.53-.21,1.11-.32,1.75-.32s1.17.1,1.63.29.86.46,1.22.8l-.38.53s-.06.07-.1.1-.09.04-.16.04c-.05,0-.11-.02-.16-.06-.06-.04-.13-.08-.21-.14-.08-.06-.17-.12-.28-.18-.11-.06-.23-.12-.38-.18-.15-.06-.32-.1-.51-.14-.2-.04-.42-.06-.68-.06-.46,0-.88.08-1.26.24s-.71.38-.98.67c-.27.29-.49.65-.64,1.06s-.23.89-.23,1.41.08,1.01.23,1.43.36.77.63,1.06c.27.29.58.51.94.66.36.15.75.23,1.17.23.26,0,.48-.01.69-.04.2-.03.39-.08.57-.14.17-.06.34-.14.48-.24.15-.1.3-.21.45-.35.07-.06.13-.09.2-.09Z"/>
+      <path class="cls-footer" d="M236.48,80.17v.95h-4.12v2.85h3.33v.91h-3.33v2.92h4.12v.95h-5.28v-8.57h5.28Z"/>
+    </g>
+    <g>
+      <path class="cls-footer" d="M219.7,47.04l-11.49,25.84h2.57c1.77,0,3.3-1.08,3.93-2.62l1.01-2.26h5.73c2.45-.18,4.43-2.12,4.68-4.55h-8.39l4.61-10.38,7.62,17.15h0c.63,1.56,2.16,2.66,3.93,2.66h2.59l-11.49-25.84h-5.3Z"/>
+      <path class="cls-footer" d="M130.38,46.55c-7.43,0-13.45,6.02-13.45,13.45s6.02,13.45,13.45,13.45,13.45-6.02,13.45-13.45-6.02-13.45-13.45-13.45ZM130.41,68.72c-4.73,0-8.58-3.83-8.58-8.57s3.84-8.57,8.58-8.57,8.57,3.84,8.57,8.57-3.84,8.57-8.57,8.57Z"/>
+      <path class="cls-footer" d="M99.87,68c-.79-.35-1.67-.56-2.6-.56-1.16,0-2.25.32-3.18.86.03.06.06.11.09.16,0,0,0,0,0,0,.01.02.03.05.04.07.63,1.15,1.43,2.02,2.31,2.69.04.03.07.05.11.08.12.09.25.18.37.26.1.07.2.14.31.2,0,0,.01,0,.02.01.23.14.47.27.72.39.02,0,.04.02.06.03.18.09.37.17.56.25.1.04.2.08.3.12.07.03.13.05.19.08,2.14.78,4.09.77,4.48.79h0c.33.01.66.02,1,.02,5.66-.03,10.67-2.43,10.67-8.1,0-6.06-4.94-7.43-10.23-8.09-3.05-.36-5.66-.99-5.66-3.2,0-1.89,1.7-3.37,5.26-3.37,1.15,0,2.53.36,3.21.6,1.04.36,1.38.4,2.04.49,2.31.33,4.18-.95,4.18-.95-2.06-3.33-5.88-4.32-9.58-4.32-4.68.04-9.83,2.18-9.83,7.4,0,5.7,4.79,7.08,9.98,7.69,3.37.36,5.87,1.35,5.87,3.74,0,2.76-2.83,3.81-5.84,3.81-1.34,0-2.62-.21-3.74-.68"/>
+      <path class="cls-footer" d="M169.28,47.06h0c-.48,0-.91.24-1.17.6h0l-7.65,10.51-7.63-10.49c-.26-.37-.69-.62-1.18-.62h-4.87v25.83h0c2.68,0,4.85-2.17,4.87-4.85h0v-13.93l8.69,11.85,8.92-11.8v13.87c0,2.69,2.18,4.86,4.87,4.86h0v-25.83h-4.84Z"/>
+      <path class="cls-footer" d="M201.11,47.06h0c-.48,0-.9.24-1.17.6h0l-7.64,10.51-7.63-10.49c-.26-.37-.69-.62-1.18-.62h-4.87v25.83h0c2.68,0,4.85-2.17,4.86-4.85h0v-13.93l8.68,11.85,8.92-11.8v13.87c0,2.69,2.18,4.86,4.87,4.86h0v-25.83h-4.84Z"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-footer" d="M51.9,56.35h0s-5.4,18.83-5.4,18.83l-3.91,13.67c6.46.06,12.44-4.17,14.31-10.68h0s5.4-18.83,5.4-18.83l3.92-13.66h-.15c-6.41,0-12.31,4.21-14.17,10.68"/>
+    <path class="cls-footer" d="M67.78,45.85h0s-5.39,18.84-5.39,18.84l-3.92,13.66c6.47.06,12.45-4.16,14.31-10.68h0s5.41-18.76,5.41-18.76l3.92-13.66c-.1,0-.2,0-.3,0-6.36,0-12.19,4.2-14.03,10.61"/>
+    <path class="cls-footer" d="M29.61,78.34h14.35l4.04-14.18s-6.81,9.38-18.39,14.18"/>
+    <path class="cls-footer" d="M80.74,45.62l-4.04,14.19s6.81-9.38,18.39-14.19h-14.35Z"/>
+  </g>
+</svg>
+        </a>
+        <p>Núcleo de negócios 360º idealizado por pessoas e direcionado a pessoas. Atuamos em um ecossistema diverso de públicos, ativos e instituições.</p>
+        <div class="footer-social">
+          <a class="social-link" href="https://instagram.com/somma.investimentos" title="Instagram">IG</a>
+          <a class="social-link" href="https://linkedin.com/company/gruposomma" title="LinkedIn">LI</a>
+          <a class="social-link" href="https://youtube.com/@sommainvestimentos" title="YouTube">YT</a>
+          <a class="social-link" href="https://facebook.com/sommainvestimentos" title="Facebook">FB</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#">Investimentos</a></li>
+          <li><a href="#">Planejamento Patrimonial</a></li>
+          <li><a href="#">Gestão de Contas</a></li>
+          <li><a href="#">Gestão de Imóveis</a></li>
+          <li><a href="#">Tecnologia Proprietária</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Sobre a SOMMA</a></li>
+          <li><a href="#">Time de liderança</a></li>
+          <li><a href="#">Certificações</a></li>
+          <li><a href="#">Imprensa</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-contacts">
+          <div class="contact-block">
+            <strong>Florianópolis — SC (Sede)</strong>
+            Rua Nirberto Haase, 100, 1º andar<br>Santa Mônica · CEP 88035-215<br>
+            <a href="tel:+554830371004">(48) 3037-1004</a>
+          </div>
+          <div class="contact-block">
+            <strong>São Paulo — SP</strong>
+            Av. Pres. JK, 28, 3º Andar<br>
+            <a href="tel:+551152000410">(11) 5200-0410</a>
+          </div>
+          <div class="contact-block">
+            <strong>Jaraguá do Sul — SC</strong>
+            R. João Planincheck, 1990, Sala 1303<br>
+            <a href="tel:+554830371004">(48) 3037-1004</a>
+          </div>
+          <div class="contact-block">
+            <strong>E-mail</strong>
+            <a href="mailto:contato@sommainvestimentos.com.br">contato@sommainvestimentos.com.br</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 SOMMA Investimentos S.A. · CNPJ 05.563.299/0001-06 · Todos os direitos reservados.</p>
+      <span>Seg–Sex · 9h–18h · GMT-3 · www.sommainvestimentos.com.br</span>
+    </div>
+
+    <p style="font-size:0.68rem; color:rgba(255,255,255,0.12); margin-top:20px; line-height:1.6;">
+      As informações contidas neste material têm caráter meramente informativo e não constituem qualquer tipo de aconselhamento de investimento. Os investimentos apresentam riscos e não contam com garantia do FGC. A rentabilidade obtida no passado não representa garantia de rentabilidade futura.
+    </p>
+  </footer>
+
+</body>
+</html>
